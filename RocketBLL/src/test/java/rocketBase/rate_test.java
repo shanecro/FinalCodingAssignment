@@ -10,7 +10,7 @@ public class rate_test {
 
 	//TODO - RocketBLL rate_test
 	//		Check to see if a known credit score returns a known interest rate
-	
+
 	//TODO - RocketBLL rate_test
 	//		Check to see if a RateException is thrown if there are no rates for a given
 	//		credit score
@@ -23,17 +23,12 @@ public class rate_test {
 			assert(4.0 == RateBLL.getRate(714));
 			assert(4.5 == RateBLL.getRate(664));
 			assert(5.0 == RateBLL.getRate(614));
-			assert(0.0 == RateBLL.getRate(564)); // will throw exception
-			
-			
-			
-		} catch (RateException e) {
-			//  Auto-generated catch block
+			assert(0.0 == RateBLL.getRate(564)); // will throw exception		
+
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		
 
 	}
-
 }

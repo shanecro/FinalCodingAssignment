@@ -2,6 +2,8 @@ package rocketServer;
 
 import java.io.IOException;
 
+import org.hibernate.HibernateException;
+
 import exceptions.RateException;
 import netgame.common.Hub;
 import rocketBase.RateBLL;
@@ -25,26 +27,23 @@ public class RocketHub extends Hub {
 			
 			LoanRequest lq = (LoanRequest) message;
 			
-			//	 - RocketHub.messageReceived
-
-			//	You will have to:
-			//	Determine the rate with the given credit score (call RateBLL.getRate)
-			//		If exception, show error message, stop processing
-			//		If no exception, continue
-			double dRate;
 			try {
-				 dRate = RateBLL.getRate(lq.getiCreditScore());
+				double rate = RateBLL.getRate(lq.getiCreditScore());
+				lq.setdRate(rate);
+				lq.setdPayment(RateBLL.getPayment(rate / 12.0, lq.getiTerm() * 12.0, lq.getdAmount(), 0.0, false));
+			} catch (HibernateException e)  {
+				sendToAll(e);
+				return;
 			} catch (RateException e) {
-				System.out.println("Given Credit Score " + lq.getiCreditScore() + " does not meet minimum requirement of " +
-									e.getRdm().getiMinCreditScore());
-				e.printStackTrace(); 
+				sendToAll(e);
+				return;
+			} catch (Exception e) {
+				sendToAll(e);
 				return;
 			}
-			//	Determine if payment, call RateBLL.getPayment
-			lq.setdPayment(RateBLL.getPayment(dRate, lq.getiTerm(), lq.getdAmount(), 0.0, true));
-			//	
-			//	you should update lq, and then send lq back to the caller(s)
-			
+
+			lq.setdPayment(RateBLL.maximumPayment(lq.getdIncome(), lq.getdExpenses()));
+
 			sendToAll(lq);
 		}
 	}
