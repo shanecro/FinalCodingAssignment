@@ -18,6 +18,7 @@ public class LoanRequest implements Serializable {
 	private double dExpenses;
 	
 	
+	
 	//	 - RocketBLL.LoanRequest
 	//			missing attributes...
 	//			Income

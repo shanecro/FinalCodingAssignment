@@ -15,6 +15,7 @@ public class Action implements Serializable {
 		this.eAction = eAction;
 	}
 
+	
 	public eAction geteAction() {
 		return eAction;
 	}

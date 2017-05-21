@@ -6,6 +6,7 @@ public class RateDomainModel {
 	private int iMinCreditScore;
 	private double dInterestRate;
 	
+	
 	public RateDomainModel()
 	{
 		

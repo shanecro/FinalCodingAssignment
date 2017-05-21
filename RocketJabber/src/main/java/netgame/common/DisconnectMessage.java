@@ -18,6 +18,8 @@ final class DisconnectMessage implements Serializable {
      */
     final public String message;
     
+    
+    
     /**
      * Creates a DisconnectMessage containing a given String, which
      * is meant to describe the reason for the disconnection.

@@ -18,6 +18,7 @@ public class RocketHub extends Hub {
 		super(port);
 	}
 
+	
 	@Override
 	protected void messageReceived(int ClientID, Object message) {
 		System.out.println("Message Received by Hub");

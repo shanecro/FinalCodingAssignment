@@ -15,6 +15,7 @@ import util.HibernateUtil;
 
 public class RateDAL {
 
+	
 	public static ArrayList<RateDomainModel> getAllRates() throws HibernateException {
 		
 		Session session = HibernateUtil.getSessionFactory().openSession();

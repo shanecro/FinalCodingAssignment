@@ -15,6 +15,7 @@ public class RateBLL {
 	public static final double LoanIncome = 0.25;
 	public static final double LoanExpenses = 0.36;
 
+	
 	public static double getRate(int GivenCreditScore) throws Exception {
 		
 		/* When run the first time, retrieve and save the Rates and MinimumCreditScore.

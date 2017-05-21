@@ -17,6 +17,7 @@ import java.io.Serializable;
  */
 final class StatusMessage implements Serializable {
 
+	
     /**
      * The ID number of the player who has connected or disconnected.
      */

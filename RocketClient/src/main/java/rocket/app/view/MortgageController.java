@@ -19,6 +19,7 @@ public class MortgageController implements Initializable {
 
 	private MainApp mainApp;
 	
+	
 	@FXML private Label lblCreditsScore;
 	@FXML private Label lblTerm;
 	@FXML private Label lblIncome;

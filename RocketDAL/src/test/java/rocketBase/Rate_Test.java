@@ -20,6 +20,7 @@ public class Rate_Test {
 	@Test
 	public void test() {
 		
+		
 		ArrayList<RateDomainModel> rates = RateDAL.getAllRates();
 		int size = rates.size();
 		System.out.println ("Rates size: " + size);

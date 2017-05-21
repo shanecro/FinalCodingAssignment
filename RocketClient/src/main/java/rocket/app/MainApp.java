@@ -33,6 +33,7 @@ import rocketServer.RocketHub;
 
 public class MainApp extends Application {
 
+	
 	private Stage primaryStage;
 	private RocketHub rHub = null;
 	private RocketClient rClient = null;

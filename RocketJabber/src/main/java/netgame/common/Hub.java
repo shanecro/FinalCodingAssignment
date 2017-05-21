@@ -33,6 +33,7 @@ import java.util.concurrent.LinkedBlockingQueue;
  * do not result in a call to messageReceived, and they are not seen
  * by clients.)
  * 
+ * 
  * <p>The communication protocol that is used internally goes as follows:
  *  <ul>
  *  <li>When the server receives a connection request, it expects to

@@ -36,6 +36,7 @@ import java.util.concurrent.LinkedBlockingQueue;
  */
 abstract public class Client {
     
+	
     /**
      * A list of the ID numbers of all clients who are currently connected
      * to the hub.  This list is set each time this client is notified that

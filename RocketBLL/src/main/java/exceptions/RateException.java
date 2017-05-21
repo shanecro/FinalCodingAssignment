@@ -4,6 +4,7 @@ import rocketDomain.RateDomainModel;
 
 public class RateException extends Exception {
 
+	
 	//	* Add RateRomainModel as an attribute
 	private RateDomainModel rdm;
 	//	* Create a constructor, passing in RateDomainModel
