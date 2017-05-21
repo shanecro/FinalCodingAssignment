@@ -58,6 +58,7 @@ public class MainApp extends Application {
 
 		this.primaryStage = primaryStage;
 		
+		
 		Screen screen = Screen.getPrimary();
 		Rectangle2D bounds = screen.getVisualBounds();
 
